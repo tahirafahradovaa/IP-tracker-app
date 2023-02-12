@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { Marker, Popup, useMap } from "react-leaflet";
 
-function MarkerPoint({ location }) {
+function MarkerPoint({ location, data }) {
   const map = useMap();
   useEffect(() => {
     map.flyTo(location, 13, {
@@ -12,7 +12,7 @@ function MarkerPoint({ location }) {
   return (
     <Marker position={location}>
       <Popup>
-        A pretty CSS3 popup. <br /> Easily customizable.
+        {data.country_name}-{data.city}
       </Popup>
     </Marker>
   );

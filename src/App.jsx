@@ -54,7 +54,7 @@ const App = () => {
         </div>
       </div>
       {data && <Information data={data} />}
-      <Map location={location} />
+      <Map data={data} location={location} />
     </>
   );
 };
