@@ -14,8 +14,10 @@ a {
 }
 
 .inputContainer {
+  position: relative;
   display: flex;
   margin: 0 auto;
+  flex-direction: column;
   width: 99%;
   margin-bottom: 20px;
   margin-right: 10px;
@@ -28,49 +30,47 @@ a {
   justify-content: center;
   align-items: center;
   padding: 10px;
-
   align-items: center;
 }
 input {
   padding: 20px 25px;
-  border: 1px solid black;
+  border: none;
   max-width: 400px;
   width: 300px;
+  outline: none;
   border-radius: 20px;
 }
 button {
   margin-left: -50px;
-  background: url(./design/arrow.svg);
-  background-position: center;
+  background-color: black !important;
   border: none;
   padding: 28px 25px;
-  background-size: 1.3rem;
-  background-repeat: no-repeat;
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
-  background-color: black;
   cursor: pointer;
-  font-size: 20px;
-  font-weight: bold;
-  background-color: #8284a4;
 }
 h2 {
   color: #4a4949;
 }
 .infoContainer {
-  background-color: #e6dddd97;
+  z-index: 1000 !important;
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
   font-size: 10px;
-
   bottom: 150px;
-  font-size: 14px;
+  font-size: 10px;
   margin: 0 auto;
+  height: fit-content;
+  padding: 20px 25px;
   display: flex;
-  margin-left: -400px;
+  border-radius: 10px;
   justify-content: space-between;
   align-items: center;
   gap: 20px;
   line-height: normal;
-  margin: 20px;
 }
 .infoContainer div {
   padding: 10px 15px;
@@ -83,15 +83,23 @@ h2 {
 .infoContainer div:nth-of-type(3) {
   border-left: 1px solid black;
 }
-
+button:hover {
+  background-color: rgb(22, 22, 22) !important;
+}
 @media (max-width: 800px) {
   .infoContainer {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    top: 65%;
+    gap: 10px;
     border-radius: 20px;
   }
   .infoContainer div {
     border-left: none !important ;
+  }
+  .infoContainer div:nth-of-type(2) {
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
   }
 }
