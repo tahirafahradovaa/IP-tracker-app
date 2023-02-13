@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import { Marker, Popup, useMap } from "react-leaflet";
-// import icon from "./design/icon-location.svg";
 import icon from "../design/icon-location.svg";
 import L from "leaflet";
 

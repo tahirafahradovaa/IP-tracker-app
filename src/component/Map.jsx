@@ -3,6 +3,9 @@ import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import MarkerPoint from "./MarkerPoint";
 function Map({ location, data }) {
+  useEffect(() => {
+    console.log("changed");
+  }, [location]);
   return (
     <MapContainer
       style={{

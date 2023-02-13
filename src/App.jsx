@@ -8,24 +8,13 @@ const App = () => {
   const [ip, setIp] = useState("188.253.229.29");
   const [data, setData] = useState({});
   useEffect(() => {
-    axios
-      .get(`https://ipapi.co/${ip}/json/`)
-      .then(
-        (res) => (
-          setData(res.data),
-          setLocation({ lat: res.data.latitude, lng: res.data.longitude })
-        )
-      );
+    axios.get(`https://ipapi.co/${ip}/json/`).then((res) => setData(res.data));
   }, []);
   const handleClick = (event) => {
-    axios
-      .get(`https://ipapi.co/${ip}/json/`)
-      .then(
-        (res) => (
-          setLocation({ lat: res.data.latitude, lng: res.data.longitude }),
-          setData(res.data)
-        )
-      );
+    axios.get(`https://ipapi.co/${ip}/json/`).then((res) => {
+      setData(res.data);
+      setLocation({ lat: res.data.latitude, lng: res.data.longitude });
+    });
   };
 
   return (
@@ -53,8 +42,14 @@ const App = () => {
           </button>
         </div>
       </div>
-      {data && <Information data={data} />}
-      <Map data={data} location={location} />
+      {data.error ? (
+        <h1 className="error">{data.reason}</h1>
+      ) : (
+        <>
+          <Map data={data} location={location} />
+          <Information data={data} />
+        </>
+      )}
     </>
   );
 };

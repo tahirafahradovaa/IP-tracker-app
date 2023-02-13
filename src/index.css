@@ -12,6 +12,12 @@ a {
   color: #646cff;
   text-decoration: inherit;
 }
+.error {
+  margin: 50px auto;
+  width: 600px;
+  font-size: 60px;
+  color: rgb(212, 26, 26);
+}
 
 .inputContainer {
   position: relative;
@@ -19,7 +25,7 @@ a {
   margin: 0 auto;
   flex-direction: column;
   width: 99%;
-  margin-bottom: 20px;
+
   margin-right: 10px;
   height: 340px;
   background-image: url(./design/pattern-bg.png);
