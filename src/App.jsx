@@ -5,6 +5,7 @@ import Map from "./component/Map";
 import arrow from "./design/arrow.svg";
 const App = () => {
   const [location, setLocation] = useState({ lat: 40.3909, lng: 49.8759 });
+  const [datas, setDatas] = useState({});
   const [ip, setIp] = useState("188.253.229.29");
   const [data, setData] = useState({});
   useEffect(() => {
